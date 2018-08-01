@@ -11,7 +11,7 @@ RUN /usr/sbin/a2ensite default-ssl
 RUN /usr/sbin/a2enmod ssl
 
 #     <--install php and mysql client and server-->
-RUN apt-get install -y php libapache2-mod-php php-cli php-mysql mysql-server
+RUN apt-get install -y php libapache2-mod-php php-cli php-mysql php-mysqli php-dev mysql-server mysql-client
 
 #     <--clean installation-->
 RUN apt-get -qy clean && \
@@ -22,6 +22,6 @@ RUN rm /var/www/html/*
 ADD Contents/index.php /var/www/html/
 
 VOLUME ["/mnt", "/var/www/html"]
-EXPOSE 80 443
+EXPOSE 80 443 5432 3306
 WORKDIR  /mnt
 ENTRYPOINT apt-get update && apt-get upgrade -y && service apache2 restart && service mysql restart && /bin/bash
