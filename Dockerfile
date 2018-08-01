@@ -11,7 +11,7 @@ RUN /usr/sbin/a2ensite default-ssl
 RUN /usr/sbin/a2enmod ssl
 
 #     <--install php and mysql client and server-->
-RUN apt-get install -y php libapache2-mod-php php-cli php-mysql mysql-client mysql-server
+RUN apt-get install -y php libapache2-mod-php php-cli php-mysql mysql-server
 
 #     <--clean installation-->
 RUN apt-get -qy clean && \
