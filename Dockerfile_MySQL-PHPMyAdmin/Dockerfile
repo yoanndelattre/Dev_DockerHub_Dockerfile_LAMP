@@ -1,12 +1,10 @@
 FROM yoanndelattre/base:base-debian
 MAINTAINER Yoann Delattre "github.com/yoanndelattre | twitter.com/yoanndelattre_"
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install git apt-utils automake cron curl dpkg make man-db nano tar unzip vim software-properties-common wget zip -y
-RUN git config --global user.email "yoanndelattre21@gmail.com"
-RUN git config --global user.name "ImWargame"
+ENV DEBIAN_FRONTEND=noninteractive
 
 #     <--install mysql-->
-RUN apt-get install -y mysql-server mysql-client
+RUN apt-get install -y mysql-server mysql-client phpmyadmin
 
 #     <--clean installation-->
 RUN apt-get -qy clean && \
