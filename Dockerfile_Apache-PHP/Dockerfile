@@ -10,8 +10,8 @@ RUN apt-get install -y apache2
 RUN /usr/sbin/a2ensite default-ssl
 RUN /usr/sbin/a2enmod ssl
 
-#     <--install php and mysql client and server-->
-RUN apt-get install -y php libapache2-mod-php php-cli php-mysql php-mysqli php-dev mysql-server mysql-client
+#     <--install php-->
+RUN apt-get install -y php libapache2-mod-php php-cli php-mysql php-mysqli php-dev
 
 #     <--clean installation-->
 RUN apt-get -qy clean && \
