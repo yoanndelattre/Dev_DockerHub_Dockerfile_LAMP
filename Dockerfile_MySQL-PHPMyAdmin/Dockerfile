@@ -17,6 +17,10 @@ RUN echo 'phpmyadmin phpmyadmin/mysql/app-pass password passwd_sql' | debconf-se
 RUN echo 'phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2' | debconf-set-selections
 RUN /etc/init.d/mysql start; apt-get -y install phpmyadmin --no-install-recommends
 
+#     <--add default file-->
+RUN rm /var/www/html/*
+ADD Contents/index.html /var/www/html/
+
 #     <--clean installation-->
 RUN apt-get -qy clean && \
       rm -rf /var/lib/apt/lists/*
