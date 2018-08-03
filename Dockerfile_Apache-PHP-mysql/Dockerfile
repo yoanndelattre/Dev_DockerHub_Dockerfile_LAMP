@@ -8,7 +8,7 @@ RUN /usr/sbin/a2ensite default-ssl
 RUN /usr/sbin/a2enmod ssl
 
 #     <--install php-->
-RUN apt-get install -y php libapache2-mod-php php-cli php-mysql php-mysqli php-dev
+RUN apt-get install -y php libapache2-mod-php php-cli php-mysql php-dev
 
 #     <--clean installation-->
 RUN apt-get -qy clean && \
