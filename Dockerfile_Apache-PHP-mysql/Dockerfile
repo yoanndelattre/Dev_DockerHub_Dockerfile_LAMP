@@ -20,5 +20,5 @@ ADD Contents/index.php /var/www/html/
 
 VOLUME ["/mnt", "/var/www/html"]
 EXPOSE 80 443
-WORKDIR  /mnt
+WORKDIR  /var/www/html
 ENTRYPOINT apt-get update && apt-get upgrade -y && service apache2 start && /bin/bash
