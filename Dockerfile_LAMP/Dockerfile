@@ -20,7 +20,7 @@ RUN /etc/init.d/mysql start; apt-get -y install phpmyadmin --no-install-recommen
 #     <--install apache2-->
 RUN apt-get install -y apache2
 
-#     <--install php-->
+#     <--install php5-->
 RUN apt-get install -y php5 libapache2-mod-php5 php5-cli php5-mysql php5-dev
 
 #     <--add default file-->
