@@ -34,4 +34,4 @@ RUN apt-get -qy clean && \
 VOLUME ["/mnt", "/var/log/mysql/", "/var/www/html"]
 EXPOSE 80 443 3306
 WORKDIR  /var/www/html
-CMD service apache2 start; mysqld_safe
+CMD apt-get update && apt-get upgrade -y && service apache2 start; mysqld_safe

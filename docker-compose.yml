@@ -1,0 +1,23 @@
+version: '2'
+services:
+  web:
+    build: Dockerfile_Apache-PHP/
+    container_name: web
+    network_mode: bridge
+    links:
+      - "db"
+    volumes:
+      - /c/Users/$USERNAME/Projet Dev:/var/www/html
+    ports:
+      - "80:80"
+      - "443:443"
+    tty: true
+
+  db:
+    build: Dockerfile_MySQL-PHPMyAdmin/
+    container_name: db
+    network_mode: bridge
+    ports:
+      - "8080:80"
+      - "3306:3306"
+    tty: true
