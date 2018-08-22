@@ -4,6 +4,7 @@ services:
     build: Dockerfile_Apache-PHP/
     container_name: web
     network_mode: bridge
+    hostname: web
     links:
       - "db"
     depends_on:
@@ -19,6 +20,7 @@ services:
     build: Dockerfile_MySQL-PHPMyAdmin/
     container_name: db
     network_mode: bridge
+    hostname: database
     ports:
       - "8080:80"
       - "3306:3306"
