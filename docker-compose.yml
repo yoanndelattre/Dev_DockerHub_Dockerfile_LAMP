@@ -17,11 +17,10 @@ services:
     tty: true
 
   db:
-    build: Dockerfile_MySQL-PHPMyAdmin/
+    build: Dockerfile_MySQL/
     container_name: db
     network_mode: bridge
     hostname: database
     ports:
-      - "8080:80"
       - "3306:3306"
     tty: true
