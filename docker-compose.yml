@@ -1,7 +1,7 @@
 version: '2'
 services:
   web:
-    build: Dockerfile_Apache-PHP/
+    image: yoanndelattre/lamp:apache_php
     container_name: web
     network_mode: bridge
     hostname: web
@@ -17,7 +17,7 @@ services:
     tty: true
 
   db:
-    build: Dockerfile_MySQL/
+    image: yoanndelattre/lamp:mysql
     container_name: db
     network_mode: bridge
     hostname: database
