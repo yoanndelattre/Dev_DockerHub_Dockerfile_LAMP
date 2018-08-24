@@ -21,6 +21,6 @@ RUN apt-get -qy clean && \
       rm -rf /var/lib/apt/lists/*
 
 VOLUME ["/var/log/mysql/", "/etc/mysql", "/var/lib/mysql"]
-EXPOSE 3306/tcp
+EXPOSE 3306
 ENTRYPOINT ["/sbin/entrypoint.sh"]
 CMD ["/usr/bin/mysqld_safe"]
