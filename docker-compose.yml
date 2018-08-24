@@ -24,3 +24,7 @@ services:
     ports:
       - "3306:3306"
     tty: true
+    environment:
+      - DB_NAME=db
+      - DB_USER=root
+      - DB_PASS=mysql
