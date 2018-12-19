@@ -2,8 +2,7 @@ FROM yoanndelattre/base:base-ubuntu
 MAINTAINER Yoann Delattre "github.com/yoanndelattre | twitter.com/yoanndelattre_"
 RUN apt-get update && apt-get upgrade -y
 
-ENV MYSQL_USER=mysql \
-    MYSQL_DATA_DIR=/var/lib/mysql \
+ENV MYSQL_DATA_DIR=/var/lib/mysql \
     MYSQL_RUN_DIR=/run/mysqld \
     MYSQL_LOG_DIR=/var/log/mysql
 ENV DB_NAME db
