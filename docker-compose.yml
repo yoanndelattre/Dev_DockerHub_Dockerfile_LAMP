@@ -10,11 +10,10 @@ services:
     depends_on:
       - "db"
     volumes:
-      - /c/Users/$USERNAME/Projet Dev:/var/www/html
+      - web_files:/var/www/html
     ports:
       - "80:80"
       - "443:443"
-    tty: true
 
   db:
     image: yoanndelattre/lamp:mysql
@@ -23,8 +22,10 @@ services:
     hostname: database
     ports:
       - "3306:3306"
-    tty: true
     environment:
       - DB_NAME=db
       - DB_USER=root
       - DB_PASS=passwd
+
+volumes:
+  web_files:
