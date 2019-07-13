@@ -1,7 +1,7 @@
 FROM yoanndelattre/base:base-debian
 LABEL MAINTAINER='Yoann Delattre "github.com/yoanndelattre | twitter.com/yoanndelattre_"'
 RUN apt-get update && apt-get upgrade -y && \
-      apt-get install -y apache2 php libapache2-mod-php && \
+      apt-get install -y apache2 php libapache2-mod-php php-cli php-mysql php-dev && \
       /usr/sbin/a2ensite default-ssl && \
       /usr/sbin/a2enmod ssl && \
       rm -rf /var/www/html/* && \
