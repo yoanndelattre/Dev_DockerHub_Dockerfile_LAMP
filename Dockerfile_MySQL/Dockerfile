@@ -6,13 +6,13 @@ ENV MYSQL_DATA_DIR=/var/lib/mysql \
     DB_USER=root \
     DB_PASS=passwd
 RUN apt-get update && apt-get upgrade -y && \ 
-      DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-server && \ 
-      sed -i "s/127.0.0.1/0.0.0.0/g" /etc/mysql/mysql.conf.d/mysqld.cnf && \ 
-      mkdir /var/run/mysqld && \
-      chown -R mysql:mysql /var/run/mysqld && \
-      rm -rf ${MYSQL_DATA_DIR} && \
-      apt-get -qy clean && \
-      rm -rf /var/lib/apt/lists/*
+    DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-server && \ 
+    sed -i "s/127.0.0.1/0.0.0.0/g" /etc/mysql/mysql.conf.d/mysqld.cnf && \ 
+    mkdir /var/run/mysqld && \
+    chown -R mysql:mysql /var/run/mysqld && \
+    rm -rf ${MYSQL_DATA_DIR} && \
+    apt-get -qy clean && \
+    rm -rf /var/lib/apt/lists/*
 VOLUME ["/var/log/mysql/", "/etc/mysql", "/var/lib/mysql"]
 EXPOSE 3306
 CMD ["mysqld_safe"]
